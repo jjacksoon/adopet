@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{kennel.name}} | Adopet</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <link rel="icon" href="/img/logo-icon.svg" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/page-kennel.css" />
+  <link rel="stylesheet" href="/css/sidebar.css" />
+  <link rel="stylesheet" href="/css/animation.css" />
+  <link rel="stylesheet" href="/css/map.css" />
+  <link rel="stylesheet" href="/css/buttons.css" />
+</head>
+
+<body>
+  <div id="page-kennel">
+    <aside class="animate-right sidebar">
+      <a href="/" class="logo"><strong>Adopet</strong></a>
+
+      <footer>
+        <button onclick="history.back()">
+          <img src="/img/arrow-back.svg" alt="Voltar">
+        </button>
+      </footer>
+    </aside>
+    <main class="animate-appear with-sidebar">
+      <div class="kennel-details">
+        <img src="{{kennel.firstImage}}" alt="{{kennel.name}}" />
+
+        <div class="images">
+          {{#each kennel.images}}
+          <button onclick="selectImage(event)" class="active" type="button">
+            <img src="{{this}}" alt="{{kennel.name}}" />
+          </button>
+          {{/each}}
+        </div>
+
+        <div class="kennel-details-content">
+          <h1>{{kennel.name}}</h1>
+          <p>
+            {{kennel.about}}
+          </p>
+          <div class="map-container">
+            <div id="mapid"></div>
+            <span data-latitude="{{kennel.latitude}}" data-longitude="{{kennel.longitude}}"></span>
+            <footer>
+              <a target="_blank"
+                href="https://maps.google.com/mobile?q={{kennel.latitude}},{{kennel.longitude}}&z={15}"><strong>Ver
+                  rotas no Google Maps</strong></a>
+            </footer>
+          </div>
+
+          <hr />
+          <h2>Instruções para visita</h2>
+          <p>
+            {{kennel.instructions}}
+          </p>
+
+          <div class="open-details">
+            <div class="hour">
+              <img src="/img/clock.svg" alt="Horarios" />
+              {{kennel.opening_hours}}
+            </div>
+            {{#if kennel.open_on_weekends}}
+            <div class="open-on-weekends open">
+              <img src="/img/info.svg" alt="Informações" />
+              Atendemos fim de semana
+            </div>
+            {{else}}
+            <div class="open-on-weekends closed">
+              <img src="/img/info-red.svg" alt="Informações" />
+              Não atendemos fim de semana
+            </div>
+            {{/if}}
+          </div>
+
+          <a href="http://api.whatsapp.com/send?1=pt_BR&phone={{kennel.whatsapp}}&text= Olá. Gostaria de uma informação sobre visitas no {{kennel.name}}" target="_blank"
+            class="primary-button" type="button">
+            <img src="/img/whatsapp.svg" alt="Whatsapp" />
+            Entrar em contato
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/js/page-kennel.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+/* ==========GOOGLE FONTES========== */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
+
+/* ==========Declaring global variables========== */
+/* ==========Declaring project's colors========== */
+:root {
+  --first-color: #ffffff;
+  --second-color: #ffb666;
+}
+/* ==========Fonts and typography========== */
+:root {
+  font-size: 62.5%;
+  --big-font-size: 5rem;
+}
+/* ==========Margins========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  color: var(--first-color);
+  background: #EBF2F5;
+}
+body,
+input,
+button,
+textarea {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1;
+}

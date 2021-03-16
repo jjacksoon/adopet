@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localize um abrigo | Adopet</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <link rel="icon" href="/img/logo-icon.svg" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/page-kennels.css" />
+  <link rel="stylesheet" href="/css/animation.css" />
+</head>
+
+<body>
+  <div id="page-kennels">
+    <aside class="animate-right">
+      <header>
+        <a href="/" class="logo"><strong>Adopet</strong></a>
+        <h2>Escolha um abrigo no mapa</h2>
+        <p>Muitos animais estão aguardando sua visita.</p>
+      </header>
+      <footer>
+        <strong>São Luís</strong>
+        <p>Maranhão</p>
+
+      </footer>
+    </aside>
+    <div id="mapid" class="animate-appear"></div>
+
+    <div class="kennels">
+      {{#each kennels}}
+
+        <span hidden 
+        data-id="{{this.id}}" 
+        data-name="{{this.name}}" 
+        data-latitude="{{this.latitude}}"
+        data-longitude="{{this.longitude}}">
+        </span>
+
+      {{/each}}
+    </div>
+
+
+    <a href="/create-kennel" class="create-kennels" title="Cadastre um abrigo">
+      <img src="/img/plus.svg" alt="Criar abrigo" />
+    </a>
+  </div>
+
+  <script src="/js/page-kennels.js"></script> -->
+</body>
+
+</html>
