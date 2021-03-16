@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Adopet" title="#Adopet" src="https://imgur.com/BRUgfSi" />
+    <img alt="Adopet" title="#Adopet" src="https://i.imgur.com/BRUgfSi.png" />
 </h1>
 
 <h4 align="center"> 
@@ -50,7 +50,7 @@ Além disso, o prototipo teve como base o projeto desenvolvido durante a **NLW -
 ## ⚠ Homepage Mobile - Em construção ⚠
 
 <h1 align="center">
-    <img alt="Adopet" title="#Adopet" src="https://imgur.com/HsABm9N" />
+    <img alt="Adopet" title="#Adopet" src="https://i.imgur.com/HsABm9N.png" />
 </h1>
 
 <h4 align="center"> 
